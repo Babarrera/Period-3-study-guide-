@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APUSH Period 3 Study Guide | Road to Revolution & The American Revolution</title>
+    <title>APUSH American Revolution Study Guide</title>
     <style>
         :root {
-            --primary-color: #8B0000;
-            --secondary-color: #002868;
-            --accent-color: #B22234;
-            --light-color: #f5f5f5;
-            --dark-color: #333;
+            --primary: #8B0000;
+            --secondary: #002868;
+            --accent: #FFD700;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
         }
         
         * {
@@ -21,23 +22,17 @@
         }
         
         body {
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         h1 {
@@ -47,113 +42,106 @@
         
         .subtitle {
             font-size: 1.2rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
+            opacity: 0.9;
         }
         
-        nav {
-            background-color: var(--secondary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
         
-        nav ul {
+        .nav-tabs {
             display: flex;
-            justify-content: center;
-            list-style: none;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gray);
         }
         
-        nav li {
-            margin: 0 15px;
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            margin: 0 0.25rem;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            transition: all 0.3s ease;
+            font-weight: 600;
         }
         
-        nav a {
+        .nav-tab:hover {
+            background: var(--light);
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
             color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-color: var(--primary);
         }
         
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        main {
-            padding: 2rem 0;
-        }
-        
-        section {
-            margin-bottom: 3rem;
-            background-color: white;
-            border-radius: 8px;
+        .content-section {
+            display: none;
+            background: white;
             padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .content-section.active {
+            display: block;
         }
         
         h2 {
-            color: var(--primary-color);
+            color: var(--primary);
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent);
         }
         
         h3 {
-            color: var(--secondary-color);
+            color: var(--secondary);
             margin: 1.5rem 0 1rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         
         th, td {
-            padding: 12px 15px;
+            padding: 0.75rem;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border: 1px solid #ddd;
         }
         
         th {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary);
             color: white;
-            font-weight: 600;
         }
         
         tr:nth-child(even) {
             background-color: #f8f9fa;
         }
         
-        tr:hover {
-            background-color: #f1f3f5;
-        }
-        
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
         }
         
         .timeline::after {
             content: '';
             position: absolute;
-            width: 4px;
-            background-color: var(--secondary-color);
+            width: 6px;
+            background-color: var(--secondary);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -2px;
+            margin-left: -3px;
         }
         
         .timeline-item {
@@ -163,64 +151,95 @@
             box-sizing: border-box;
         }
         
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
         .timeline-item::after {
             content: '';
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: var(--accent-color);
-            border: 4px solid var(--secondary-color);
-            border-radius: 50%;
+            background-color: white;
+            border: 4px solid var(--primary);
             top: 15px;
-            right: -10px;
+            border-radius: 50%;
             z-index: 1;
         }
         
-        .timeline-item:nth-child(even)::after {
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--secondary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--secondary);
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--secondary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--secondary) transparent transparent;
+        }
+        
+        .right::after {
             left: -10px;
         }
         
-        .key-concept {
-            background-color: #e8f4f8;
-            border-left: 4px solid var(--secondary-color);
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent);
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 0 4px 4px 0;
         }
         
+        .key-term {
+            background-color: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem;
             margin-top: 2rem;
         }
         
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav li {
-                margin: 5px 0;
-            }
-            
+        @media screen and (max-width: 768px) {
             .timeline::after {
                 left: 31px;
             }
@@ -231,323 +250,632 @@
                 padding-right: 25px;
             }
             
-            .timeline-item:nth-child(even) {
-                left: 0;
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid var(--secondary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--secondary) transparent transparent;
             }
             
-            .timeline-item::after {
-                left: 21px;
-                right: auto;
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>APUSH Period 3 Study Guide</h1>
-            <p class="subtitle">The Road to Revolution & The American Revolution (1754-1800)</p>
-            <p>The central theme of Period 3 is the shift from <strong>British subjects to American citizens</strong>.</p>
-        </div>
+        <h1>APUSH American Revolution Study Guide</h1>
+        <p class="subtitle">Complete Collection - All Information Preserved Exactly As Written</p>
     </header>
     
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#phase1">Phase 1: Seeds of Conflict</a></li>
-                <li><a href="#phase2">Phase 2: Escalation</a></li>
-                <li><a href="#phase3">Phase 3: Philosophical Shift</a></li>
-                <li><a href="#phase4">Phase 4: War for Independence</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#themes">Thematic Takeaways</a></li>
-            </ul>
+    <div class="container">
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-target="dbq">DBQ & Exam Tips</div>
+            <div class="nav-tab" data-target="timeline">Timeline</div>
+            <div class="nav-tab" data-target="study-notes">Study Notes</div>
+            <div class="nav-tab" data-target="key-concepts">Key Concepts</div>
+            <div class="nav-tab" data-target="review">Review Materials</div>
         </div>
-    </nav>
-    
-    <main class="container">
-        <section id="phase1">
-            <h2>Phase 1: The Seeds of Conflict (1763-1765)</h2>
-            <p>The end of the <strong>French and Indian War (Seven Years' War)</strong> is the turning point that changes everything.</p>
+        
+        <!-- DBQ & Exam Tips Section -->
+        <section id="dbq" class="content-section active">
+            <h2>DBQ & Exam Tips</h2>
             
-            <div class="key-concept">
-                <p><strong>Why it Matters:</strong> Britain wins, but is left with a massive war debt and a huge new empire in North America to manage.</p>
-                <p><strong>Key Change:</strong> The era of <strong>Salutary Neglect</strong> (Britain leaving the colonies to govern themselves) is OVER. Britain now needs to tax the colonies to pay for the war and the new territory.</p>
+            <div class="highlight-box">
+                <p><strong>· The DBQ is worth 25% of your exam score.</strong> (Note: The transcript says 35%, but the current AP US History exam structure allocates 25% to the DBQ. Always refer to the latest College Board guidelines for scoring).</p>
             </div>
             
-            <h3>Key British Actions & Colonial Responses:</h3>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>British Action (The "What")</th>
-                        <th>Year</th>
-                        <th>Colonial Response (The "So What")</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Proclamation of 1763</strong></td>
-                        <td>1763</td>
-                        <td>Bans settlement west of the Appalachians. <strong>Angers colonists</strong> who just fought a war for that land. Seen as British limitation on their freedom.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sugar Act</strong></td>
-                        <td>1764</td>
-                        <td>First act intended specifically to <strong>raise revenue</strong>. Cracks down on smuggling. Angers merchants.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stamp Act</strong></td>
-                        <td>1765</td>
-                        <td><strong>THE BIG ONE.</strong> A <strong>direct tax</strong> on all paper goods. Affects almost every colonist, especially the elite.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stamp Act Congress</strong></td>
-                        <td>1765</td>
-                        <td>First significant <strong>intercolonial meeting</strong>. 9 colonies send delegates. They petition Parliament, arguing <strong>"No Taxation Without Representation."</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sons & Daughters of Liberty</strong></td>
-                        <td>1765</td>
-                        <td>Secret societies formed to resist British policies. Use <strong>boycotts</strong> (most effective tool), intimidation, tar-and-feathering.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Virtual Representation</strong></td>
-                        <td>1765</td>
-                        <td><strong>Britain's argument:</strong> "You are represented in Parliament because its members represent all British subjects, not just the district they are from." <strong>Colonists reject this completely.</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section id="phase2">
-            <h2>Phase 2: Escalation & Rising Tensions (1767-1774)</h2>
-            <p>The conflict intensifies from a debate over taxes to a struggle over liberty and authority.</p>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>British Action (The "What")</th>
-                        <th>Year</th>
-                        <th>Colonial Response (The "So What")</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Townshend Acts</strong></td>
-                        <td>1767</td>
-                        <td>Taxes on imported goods (glass, tea, paper). Revenue used to pay royal officials, making them loyal to the Crown, not the colonies.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Letters from a Farmer in Pennsylvania (John Dickinson)</strong></td>
-                        <td>1767</td>
-                        <td>Argues that Parliament has no right to tax the colonies for revenue. Reinforces the "No Taxation" argument using Enlightenment ideas.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Boston Massacre</strong></td>
-                        <td>1770</td>
-                        <td>British soldiers fire on a mob, killing 5 colonists. <strong>Paul Revere's engraving</strong> is used as propaganda to galvanize anti-British sentiment.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Committees of Correspondence</strong></td>
-                        <td>1772+</td>
-                        <td>Created by <strong>Samuel Adams</strong>. A communication network between colonies to share news and coordinate resistance. <strong>Builds intercolonial unity.</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tea Act</strong></td>
-                        <td>1773</td>
-                        <td>Not a new tax, but a <strong>monopoly</strong> granted to the British East India Company. Hurts colonial merchants.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Boston Tea Party</strong></td>
-                        <td>1773</td>
-                        <td><strong>Sons of Liberty</strong> dump 342 chests of tea into Boston Harbor as a direct protest against the Tea Act.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Coercive (Intolerable) Acts</strong></td>
-                        <td>1774</td>
-                        <td><strong>Britain's punishment for the Tea Party:</strong> Closes Boston Harbor, restricts Massachusetts assembly, expands Quartering Act.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Quebec Act</strong></td>
-                        <td>1774</td>
-                        <td>Angers colonists for different reasons: extends Quebec's territory into the Ohio Valley and allows Catholicism. Seen as an attack on their land and religion.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>First Continental Congress</strong></td>
-                        <td>1774</td>
-                        <td>12 colonies (not GA) meet. <strong>Goal is NOT independence.</strong> They create: 1) <strong>Declaration of Rights and Grievances</strong>, 2) <strong>The Association</strong> to enforce a boycott of British goods. Agree to meet again in 1775 if demands aren't met.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section id="phase3">
-            <h2>Phase 3: The Philosophical Shift (1775-1776)</h2>
-            <p>This is the "Why" behind the "What." How did the colonists justify rebellion?</p>
-            
-            <h3>Enlightenment Influences:</h3>
-            <ul>
-                <li><strong>John Locke (Natural Rights):</strong> People are born with <strong>Life, Liberty, and Property</strong>. Government's job is to protect these. If it fails, the people have a right to rebel. (Jefferson changes "Property" to "Pursuit of Happiness").</li>
-                <li><strong>Jean-Jacques Rousseau (Social Contract):</strong> Government power comes from the <strong>consent of the governed</strong>. People agree to be governed in exchange for the protection of their rights.</li>
-                <li><strong>Baron de Montesquieu (Separation of Powers):</strong> Power should be divided within government to prevent tyranny.</li>
-            </ul>
-            
-            <h3>Thomas Paine's <em>Common Sense</em> (Jan. 1776):</h3>
-            <ul>
-                <li><strong>The Game Changer.</strong> Written in plain language for the masses.</li>
-                <li>Argues for <strong>independence</strong>, calls monarchy "tyrannical," and says America should be a "republic."</li>
-                <li>Convinces thousands of common colonists that independence is not just possible, but necessary.</li>
-            </ul>
-            
-            <h3>The Declaration of Independence (July 4, 1776):</h3>
-            <ul>
-                <li><strong>Authored by Thomas Jefferson.</strong></li>
-                <li>Heavily influenced by Enlightenment ideas (Locke).</li>
-                <li><strong>Structure:</strong>
-                    <ol>
-                        <li><strong>Preamble:</strong> States purpose and philosophy (natural rights, social contract).</li>
-                        <li><strong>List of Grievances:</strong> Long list of complaints against <strong>King George III</strong> (focusing on the King was a strategic way to unite colonists).</li>
-                        <li><strong>Resolution of Independence:</strong> Declares the colonies "free and independent states."</li>
-                    </ol>
-                </li>
-            </ul>
-        </section>
-        
-        <section id="phase4">
-            <h2>Phase 4: The War for Independence (1775-1783)</h2>
-            <p><strong>Key Fact:</strong> The fighting starts <strong>over a year before</strong> independence is declared.</p>
-            
-            <h3>Key Events:</h3>
-            <ul>
-                <li><strong>Lexington & Concord (April 1775):</strong> <strong>"The Shot Heard 'Round the World."</strong> British troops sent to seize colonial arms and arrest leaders. <strong>Paul Revere's ride</strong> warns the militia. The war begins.</li>
-                
-                <li><strong>Second Continental Congress (1775):</strong>
-                    <ul>
-                        <li>Now acts as the <strong>first national government</strong>.</li>
-                        <li>Creates the <strong>Continental Army</strong> and appoints <strong>George Washington</strong> as commander.</li>
-                        <li>Issues the <strong>Olive Branch Petition</strong> (last-ditch effort for peace, which the King rejects).</li>
-                        <li>Ultimately drafts and adopts the <strong>Declaration of Independence</strong>.</li>
-                    </ul>
-                </li>
-            </ul>
-            
-            <h3>Key to American Victory: How did they win?</h3>
+            <h3>Historical Thinking Skill Questions</h3>
+            <p><strong>What are 2 examples of historical thinking skill questions?</strong></p>
             <ol>
-                <li><strong>Home-Field Advantage & Guerrilla Tactics:</strong> They knew the land and used unconventional tactics against the rigid British formations.</li>
-                <li><strong>Ideological Commitment:</strong> Patriots were fighting for their homes, liberty, and the creation of a new nation. This is a more powerful motivator than a British soldier fighting for pay.</li>
-                <li><strong>George Washington's Leadership:</strong> His ability to hold the army together through terrible hardships (like <strong>Valley Forge</strong>) was crucial. At Valley Forge, <strong>Baron von Steuben</strong> trained the army into a professional fighting force.</li>
-                <li><strong>Foreign Aid (The Decisive Factor):</strong>
+                <li>Why did something happen? (Causation)</li>
+                <li>How did things change and/or remain the same? (Continuity and Change)</li>
+            </ol>
+            
+            <h3>DBQ Document Requirements</h3>
+            <p><strong>Do you have to use all the documents? Explain.</strong></p>
+            <p>No. You can use all of them or all but one. You can only eliminate one document from your analysis.</p>
+            
+            <h3>Time Management</h3>
+            <p><strong>How long will you have?</strong> 60 minutes total.</p>
+            
+            <h3>Suggested Steps</h3>
+            <p><strong>What are the 3 suggested steps?</strong></p>
+            <ol>
+                <li>Spend 15 minutes planning the essay.</li>
+                <li>Develop a powerful thesis statement that addresses the question.</li>
+                <li>Spend 45 minutes writing the essay, using the documents as evidence to support your thesis.</li>
+            </ol>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section id="timeline" class="content-section">
+            <h2>Timeline of Key Events Leading to the American Revolution</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date and Event</th>
+                        <th>Brief description of what happened</th>
+                        <th>Impact it would have</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1754: French and Indian War Begins</td>
+                        <td>A war sparked by colonial rivalries over the Ohio River Valley. British American colonists and their Indian allies fought against the French and their Indian allies. It was the North American theater of the global Seven Years' War.</td>
+                        <td>This costly war, though a British victory, created massive war debt for Britain. To pay it off, Britain would impose new taxes on the colonies, directly leading to the conflict that followed.</td>
+                    </tr>
+                    <tr>
+                        <td>Oct. 7, 1763: Proclamation of 1763</td>
+                        <td>After winning the war, the British government issued a proclamation that forbade American colonists from settling west of the Appalachian Mountains, reserving that land for Native American tribes.</td>
+                        <td>This angered colonists and land speculators who wanted to expand westward. It was the first major post-war act that made colonists feel their interests were subordinate to British policy, breeding resentment.</td>
+                    </tr>
+                    <tr>
+                        <td>Apr. 5, 1764: The Sugar Act</td>
+                        <td>Parliament imposed duties on foreign goods like wine, coffee, and sugar imported into the colonies. It also expanded the power of the customs service and navy to crack down on smugglers using harsh courts without juries.</td>
+                        <td>This was one of the first acts designed to raise revenue from the colonies, not just regulate trade. It set a precedent for taxation without colonial consent and angered merchants.</td>
+                    </tr>
+                    <tr>
+                        <td>Mar. 22, 1765: The Stamp Act</td>
+                        <td>This law required colonists to pay a direct tax on almost every piece of printed paper they used, including newspapers, legal documents, and playing cards. The tax had to be paid in British currency.</td>
+                        <td>This was the first direct, internal tax levied on the colonists. It sparked widespread, violent protest, organized boycotts of British goods, and led to the slogan "No taxation without representation."</td>
+                    </tr>
+                    <tr>
+                        <td>Aug. 14, 1765: Colonial Reaction to Stamp Act</td>
+                        <td>In response to the Stamp Act, colonists organized boycotts of British goods, held protests, and rioted. Tax collectors were attacked and forced to resign, making the act unenforceable.</td>
+                        <td>The unified and violent colonial reaction demonstrated their willingness to resist British policy. It showed the power of economic boycotts and forced Parliament to eventually repeal the act.</td>
+                    </tr>
+                    <tr>
+                        <td>Oct. 11, 1768: British Troops Arrive in Boston</td>
+                        <td>In response to growing unrest and protests against the Townshend Acts, Britain sent two regiments of soldiers to Boston to restore order and protect royal officials.</td>
+                        <td>The presence of a standing army in peacetime was seen as a threat to liberty by the colonists. It heightened tensions dramatically and made violent confrontation more likely, culminating in the Boston Massacre.</td>
+                    </tr>
+                    <tr>
+                        <td>July 28, 1769: Land Purchase from Six Nations</td>
+                        <td>As part of the policy established by the Proclamation of 1763, British authorities purchased land from the Six Nations Iroquois Confederacy to manage westward expansion and prevent conflict.</td>
+                        <td>This represented the British government's attempt to control the pace of settlement and maintain a stable frontier. However, it failed to satisfy land-hungry colonists or protect Native American lands in the long term.</td>
+                    </tr>
+                    <tr>
+                        <td>1767-1768: Townshend Acts Imposed</td>
+                        <td>Chancellor Townshend imposed new duties on common imported goods like glass, lead, paint, paper, and tea. Most critically, the revenue was used to pay the salaries of royal governors and judges.</td>
+                        <td>This removed the power of colonial assemblies to control these officials by withholding their pay, making them loyal only to London. It further eroded colonial self-government and led to new waves of protest and non-importation agreements.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Study Notes Section -->
+        <section id="study-notes" class="content-section">
+            <h2>American Revolution Study Notes</h2>
+            <p>Complete collection of historical context and video-based questions</p>
+            
+            <h3>Answers to Questions from the Historical Context (Page 111-112)</h3>
+            
+            <h4>What tighter control?</h4>
+            <p>After the Seven Years' War, Britain ended its policy of "salutary neglect" and began asserting more direct control over the colonies. This included:</p>
+            <ul>
+                <li>The Proclamation of 1763: Restricting colonial expansion west of the Appalachian Mountains.</li>
+                <li>New Taxes: The Sugar Act (1764) and Stamp Act (1765) were designed to raise revenue directly from the colonies, which was a new form of economic control.</li>
+                <li>Enforcement of Trade Laws: Strengthening vice-admiralty courts to crack down on smuggling and ensure compliance with trade regulations.</li>
+            </ul>
+            
+            <h4>What ideas of "self government"? Where did these come from?</h4>
+            <p>The ideas of self-government came from:</p>
+            <ul>
+                <li>Local Traditions: For over 100 years, many colonies had been governing their internal affairs through their own elected assemblies (like the Virginia House of Burgesses) which controlled budgets and passed local laws.</li>
+                <li>British Precedent: The tradition of English liberties, such as the right to a trial by jury and the principle that one's property could not be taken without consent (through representation in Parliament).</li>
+                <li>Enlightenment Ideas: The writings of John Locke and others, which argued that governments derive their power from the consent of the governed.</li>
+            </ul>
+            
+            <h4>What taxes?</h4>
+            <ul>
+                <li>The Sugar Act (1764): A tax on imported sugar and molasses.</li>
+                <li>The Stamp Act (1765): A direct tax on all printed materials (newspapers, legal documents, playing cards).</li>
+                <li>The Townshend Acts (1767): Taxes on imported goods like glass, lead, paint, paper, and tea.</li>
+            </ul>
+            
+            <h4>What is meant by "colonial representation"?</h4>
+            <p>The colonists believed in "actual representation," meaning they were only obligated to pay taxes passed by their own elected representatives in their colonial assemblies. The British government argued for "virtual representation," the idea that all members of Parliament represented the interests of all British subjects, including the colonists, even though the colonists could not vote for them. The colonists rejected this concept.</p>
+            
+            <h4>Why might colonists feel "constraints on economic activities"?</h4>
+            <ul>
+                <li>Taxes: New taxes like the Sugar Act and Townshend Acts increased the cost of doing business.</li>
+                <li>Suppression of Smuggling: British efforts to enforce trade laws and stop smuggling threatened the lucrative, if illegal, trade that many colonial merchants relied on.</li>
+                <li>Monopolies: Acts like the Tea Act (1773) granted a monopoly to the British East India Company, undercutting colonial merchants.</li>
+            </ul>
+            
+            <h4>Why might colonists feel "constraints on political rights"?</h4>
+            <ul>
+                <li>Dissolving Assemblies: British governors dissolved colonial assemblies (like in Massachusetts after the Circular Letter) for protesting British policies, stripping colonists of their political voice.</li>
+                <li>Trial Without Jury: The expansion of vice-admiralty courts meant colonists could be tried for smuggling without a jury of their peers.</li>
+                <li>The Massachusetts Government Act: Part of the Intolerable Acts, it revoked Massachusetts' charter and took away its long-held right to self-government.</li>
+            </ul>
+            
+            <h3>Calls for resistance based on the 4 ideas:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Idea</th>
+                        <th>Description & Historical Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rights of British subjects</td>
+                        <td>Colonists argued they were entitled to the traditional "rights of Englishmen," such as no taxation without consent. Patrick Henry's Stamp Act Resolutions and the phrase "no taxation without representation" embody this.</td>
+                    </tr>
+                    <tr>
+                        <td>The rights of the individual</td>
+                        <td>This was based on Enlightenment natural rights (life, liberty, property). James Otis argued that no government could rightfully deprive a man of these rights. The Declaration of Independence later enshrined this.</td>
+                    </tr>
+                    <tr>
+                        <td>Local traditions of self-rule</td>
+                        <td>A history of governing through their own assemblies. The formation of the Stamp Act Congress and the First Continental Congress were examples of colonists using their tradition of assembling to govern their own affairs.</td>
+                    </tr>
+                    <tr>
+                        <td>The ideas of the Enlightenment</td>
+                        <td>Republicanism (fear of concentrated power, virtue of the people) and John Locke's social contract (the right to overthrow a government that violates your rights). These ideas are the philosophical backbone of the Declaration of Independence.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Answers to Video-Based Questions</h3>
+            <h4>Taxes & Smuggling - Prelude to Revolution: Crash Course US History #6</h4>
+            <ol>
+                <li>...it limited their ability to take land from the Indians, and it also left them holding the bag for a lot of war debt.</li>
+                <li>Earlier taxes (like the Molasses Act) were primarily about regulating trade within the mercantile system and were easily avoided via smuggling. Post-war taxes (like the Stamp Act) were explicitly designed to raise revenue from the colonies and were enforced much more strictly.</li>
+                <li>They organized the Stamp Act Congress, formed the Sons of Liberty, initiated boycotts of British goods, and used crowd action/violence (tarring and feathering) against tax collectors.</li>
+                <li>Boycotts were collective refusals to buy British goods. They were effective because they hurt British merchants economically, who then pressured Parliament to repeal the taxes.</li>
+                <li>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>British Response (Intolerable Acts)</th>
+                                <th>Colonial Response</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Closed Boston Harbor.</td>
+                                <td>1. Sent supplies to Boston from other colonies.</td>
+                            </tr>
+                            <tr>
+                                <td>2. Revoked Massachusetts' charter (ended self-rule).</td>
+                                <td>2. Formed the First Continental Congress.</td>
+                            </tr>
+                            <tr>
+                                <td>3. Allowed troops to be quartered in private homes.</td>
+                                <td>3. Organized militias and the "Minutemen."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>It was the first truly unified colonial government, coordinating resistance across colony lines (e.g., the Continental Association to enforce boycotts). It marked a shift from protesting as separate colonies to acting as a united body.</li>
+                <li>The American Revolution refers to the broader ideological, political, and social movement towards independence. The American War for Independence is the specific military conflict (1775-1783) that was part of that revolution.</li>
+                <li>Elites in colonies like New York and Pennsylvania were nervous about the revolutionary fervor empowering common people (artisans, small farmers) and disrupting the social and economic order. They preferred reconciliation to protect their status.</li>
+                <li>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Points in Common Sense</th>
+                                <th>Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Attacked the idea of monarchy and hereditary rule.</td>
+                                <td>It was written in plain language that ordinary people could understand.</td>
+                            </tr>
+                            <tr>
+                                <td>Argued it was "common sense" for a continent to not be ruled by a distant island.</td>
+                                <td>It sold massively (150,000+ copies), spreading the idea of independence to a wide audience.</td>
+                            </tr>
+                            <tr>
+                                <td>Said America's cause was the cause of all mankind.</td>
+                                <td>It was pivotal in turning public opinion from seeking reconciliation to demanding independence.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ol>
+        </section>
+        
+        <!-- Key Concepts Section -->
+        <section id="key-concepts" class="content-section">
+            <h2>Key Concepts</h2>
+            
+            <h3>APUSH Review: Key Acts Leading to the American Revolution</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1763 Why is this date important?</td>
+                        <td>The Treaty of Paris ended the Seven Years' War, and Britain issued the Proclamation of 1763, ending salutary neglect.</td>
+                    </tr>
+                    <tr>
+                        <td>What does the map show?</td>
+                        <td>The battles of Pontiac's Rebellion, which was the direct cause for the Proclamation of 1763.</td>
+                    </tr>
+                    <tr>
+                        <td>Stamp Act and Effects</td>
+                        <td>A direct tax on printed goods. It led to the Stamp Act Congress (first intercolonial protest), Sons of Liberty protests, boycotts, and its eventual repeal, but also the Declaratory Act.</td>
+                    </tr>
+                    <tr>
+                        <td>Other ACTS</td>
+                        <td>Townshend Acts (taxes on imports), Tea Act (led to Boston Tea Party), Intolerable Acts (punishment for Boston).</td>
+                    </tr>
+                    <tr>
+                        <td>Boston Tea Party</td>
+                        <td>A protest against the Tea Act where Sons of Liberty dumped tea into Boston Harbor.</td>
+                    </tr>
+                    <tr>
+                        <td>Continental Congress</td>
+                        <td>The First Continental Congress met in response to the Intolerable Acts to coordinate resistance and boycott British goods.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>History Brief: The Intolerable Acts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Why pass these ACTS?</td>
+                        <td>To punish Boston for the Boston Tea Party and to reassert British control over Massachusetts.</td>
+                    </tr>
+                    <tr>
+                        <td>Identify 5 things colonists disliked</td>
+                        <td>
+                            <ol>
+                                <li>Closing Boston Harbor.</li>
+                                <li>Ending self-government in Massachusetts.</li>
+                                <li>Allowing trials of officials to be moved to England.</li>
+                                <li>Quartering troops in private homes.</li>
+                                <li>Appointing a military general (Thomas Gage) as governor.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Attitude from Parliament</td>
+                        <td>They were angry and dismissive, believing the colonies were weak and would quickly submit. Lord North said, "We must control them or submit to them."</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>History Brief: The First Continental Congress</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Purpose of the meeting?</td>
+                        <td>To decide how to respond to the Intolerable Acts.</td>
+                    </tr>
+                    <tr>
+                        <td>What did everyone agree upon?</td>
+                        <td>To continue boycotting British goods and to prepare their militias for war.</td>
+                    </tr>
+                    <tr>
+                        <td>What did people disagree on?</td>
+                        <td>How far to go; some wanted peace at all costs, while others (like Patrick Henry) believed war was inevitable.</td>
+                    </tr>
+                    <tr>
+                        <td>Main outcome?</td>
+                        <td>The creation of the Continental Association to enforce the boycott and a decision to meet again in 1775 if grievances were not addressed.</td>
+                    </tr>
+                    <tr>
+                        <td>Patrick Henry's attitude?</td>
+                        <td>He was a radical who believed war had already begun. His famous quote: "Give me liberty, or give me death!"</td>
+                    </tr>
+                    <tr>
+                        <td>Who are the minutemen?</td>
+                        <td>Colonial militiamen who vowed to be ready to fight at a moment's notice.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Common Sense by Shmoop</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Who was Thomas Paine?</td>
+                        <td>An English-born journalist and propagandist who immigrated to America with Benjamin Franklin's help.</td>
+                    </tr>
+                    <tr>
+                        <td>What did he write?</td>
+                        <td>The pamphlet Common Sense (1776).</td>
+                    </tr>
+                    <tr>
+                        <td>Main Ideas</td>
+                        <td>
+                            <ol>
+                                <li>Independence from Britain.</li>
+                                <li>Republican democracy is the best government; monarchy is unnatural.</li>
+                                <li>A call to action for colonists to fight for their liberty.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Why was he successful?</td>
+                        <td>He used powerful rhetoric, wrote in straightforward language, and overturned common assumptions about monarchy, making the case for independence relatable to ordinary people.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Objective 1.6: The Declaration of Independence</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vibe in 1776 America?</td>
+                        <td>Fed up with King George III. Ready for Revolution and independence.</td>
+                    </tr>
+                    <tr>
+                        <td>Egalitarianism?</td>
+                        <td>The belief that everyone is equal and worth is defined by ability/virtue, not wealth or title.</td>
+                    </tr>
+                    <tr>
+                        <td>2nd Continental Congress</td>
+                        <td>The assembly of representatives from all 13 colonies that voted for independence and managed the war effort.</td>
+                    </tr>
+                    <tr>
+                        <td>Statement of what?</td>
+                        <td>A statement of separation from Great Britain and the reasons why it was necessary.</td>
+                    </tr>
+                    <tr>
+                        <td>Based on what?</td>
+                        <td>Enlightenment ideas, specifically John Locke's philosophy of natural rights.</td>
+                    </tr>
+                    <tr>
+                        <td>Enlightenment ideas present?</td>
+                        <td>Natural Rights ("Life, Liberty, pursuit of Happiness"), the Social Contract (governments get power from the consent of the governed), and the Right of Revolution.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>6 Major Causes of the America Revolution</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cause</th>
+                        <th>What was it?</th>
+                        <th>How did it further split the colonies from Great Britain?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Proclamation of 1763</td>
+                        <td>Banned colonial settlement west of the Appalachians.</td>
+                        <td>Colonists felt betrayed after fighting for that land and saw it as an effort to keep them weak and controlled.</td>
+                    </tr>
+                    <tr>
+                        <td>Sugar Act (1764)</td>
+                        <td>A tax on molasses, strictly enforced.</td>
+                        <td>It angered merchants and established the precedent of Britain raising revenue from the colonies, leading to cries of "no taxation without representation."</td>
+                    </tr>
+                    <tr>
+                        <td>Stamp Act (1765)</td>
+                        <td>A direct tax on all printed materials.</td>
+                        <td>It united the colonies in protest (Stamp Act Congress) and created organized resistance groups (Sons of Liberty).</td>
+                    </tr>
+                    <tr>
+                        <td>Townshend Acts (1767)</td>
+                        <td>Taxes on imported goods.</td>
+                        <td>Led to new boycotts and protests, and the stationing of British troops in Boston, which increased tension and led to the Boston Massacre.</td>
+                    </tr>
+                    <tr>
+                        <td>Tea Act (1773)</td>
+                        <td>Granted a monopoly on tea to the British East India Company.</td>
+                        <td>Seen as a trick to accept taxation, it provoked the Boston Tea Party, a direct act of defiance.</td>
+                    </tr>
+                    <tr>
+                        <td>Intolerable Acts (1774)</td>
+                        <td>Punitive laws to punish Massachusetts for the Tea Party.</td>
+                        <td>They were seen as a threat to the liberty of all colonies, leading directly to the First Continental Congress and the unification of colonial resistance.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Review Materials Section -->
+        <section id="review" class="content-section">
+            <h2>Review Materials</h2>
+            
+            <h3>APUSH Notes - Preserving all original content and order</h3>
+            
+            <h4>APUSH Notes - Complete Collection - All Information Preserved Exactly As Written</h4>
+            
+            <ol>
+                <li><strong>What 3 things does the Massachusetts Circular Letter say?</strong>
                     <ul>
-                        <li><strong>Battle of Saratoga (1777):</strong> A major American victory. <strong>This is the turning point of the war</strong> because it convinces <strong>France</strong> that the Americans can win.</li>
-                        <li><strong>French Alliance:</strong> France provides money, troops, and most importantly, its <strong>navy</strong>. Spanish and Dutch support also follows.</li>
+                        <li>It denounces the Townshend Revenue Acts.</li>
+                        <li>It attacks the British plan to make royal officials independent of colonial assemblies.</li>
+                        <li>It urges the colonies to find a way to "harmonize with each other" and take common action.</li>
                     </ul>
+                </li>
+                <li><strong>Who was the wealthiest merchant in the colonies?</strong>
+                    <p>John Hancock.</p>
+                </li>
+                <li><strong>Based on its usage on page 115, what do you think the word sloop means?</strong>
+                    <p>Based on the context of it being seized by customs officers and belonging to a merchant, a sloop is a type of sailing ship used for trade.</p>
+                </li>
+                <li><strong>(116) Read about Paul Revere's picture. What is it considered?</strong>
+                    <p>The image("The Bostonians Paying the Excise-Man, or Tarring and Feathering") became an enduring American favorite and a celebration of the righteous violence of the Revolution.</p>
+                </li>
+                <li><strong>(117) Briefly describe the purpose of Committees of Correspondence?</strong>
+                    <p>Their purpose was to serve as the principal channel for sharing information, shaping public opinion, and building cooperation among the colonies.</p>
+                </li>
+                <li><strong>(118) What is the image all about? In your opinion, how does this make the colonists look?</strong>
+                    <p><strong>What it's about:</strong> The image depicts a Boston mob tarring and feathering a British customs official, John Malcolm, as punishment for his actions. The Boston Tea Party is shown in the background.</p>
+                    <p><strong>How it makes the colonists look:</strong> (Opinion) It makes the colonists look violent, intimidating, and ruthless. While the text mentions it was embraced by Patriots, the details (hot tar, feathers, noose) portray a mob using brutal public humiliation and the threat of death to enforce their will.</p>
+                </li>
+                <li><strong>(120) Why did the British go to Lexington and Concord? What happened there?</strong>
+                    <p><strong>Why:</strong> General Gage sent troops to Concord to seize the colonial armory and stores of weapons and gunpowder.</p>
+                    <p><strong>What happened:</strong> At Lexington, the British encountered a group of minutemen. Shots were fired, killing eight Americans. The British moved on to Concord, burned some supplies, and were then attacked by a growing militia force on their retreat back to Boston, suffering heavy casualties (73 killed, 202 wounded).</p>
+                </li>
+                <li><strong>(126) Communities in Conflict. What are 3 separate points Boucher and Paine make?</strong>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Will You Rebel For A Cause So Trivial? (Boucher)</th>
+                                <th>The Sun Never Shone On A Cause of Greater Worth (T-Paine)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Resisting and rebelling over a small tax on tea is unreasonable and not the act of "good Christians."</td>
+                                <td>1. The American cause is for the liberty of a continent and will affect posterity for all time; it is a cause of immense importance.</td>
+                            </tr>
+                            <tr>
+                                <td>2. Christians should submit to disappointments and calamities peacefully, following the example of Christ and his disciples, rather than resorting to violence.</td>
+                                <td>2. The period of debate is over; the king has chosen arms, and the continent has accepted the challenge.</td>
+                            </tr>
+                            <tr>
+                                <td>3. The rebellion is based on the reports of others (agitators) and not on the colonists' own direct discovery of oppression.</td>
+                                <td>3. The relationship with Britain is broken beyond repair, comparing it to a rape that cannot be forgiven. America must become an "asylum for mankind."</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </li>
             </ol>
             
-            <h3>Final Victory & Treaty:</h3>
-            <ul>
-                <li><strong>Yorktown (1781):</strong> The final major battle. The French navy blocks a British escape by sea, while Washington's army (with French troops) surrounds them on land. British General Cornwallis surrenders.</li>
-                
-                <li><strong>Treaty of Paris (1783):</strong>
-                    <ul>
-                        <li>Britain officially recognizes American <strong>independence</strong>.</li>
-                        <li>U.S. borders are set: Atlantic to Mississippi River, Great Lakes to Florida.</li>
-                        <li>America must honor debts owed to British merchants.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        
-        <section id="timeline">
-            <h2>Timeline for Quick Review</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1763</h3>
-                        <p>End of French & Indian War, Proclamation Act</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1765</h3>
-                        <p>Stamp Act, Stamp Act Congress, Sons of Liberty</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1770</h3>
-                        <p>Boston Massacre</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1773</h3>
-                        <p>Boston Tea Party</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1774</h3>
-                        <p>Intolerable Acts, First Continental Congress</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1775</h3>
-                        <p>Lexington & Concord, Second Continental Congress</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1776</h3>
-                        <p><em>Common Sense</em> published, Declaration of Independence</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1777</h3>
-                        <p>Battle of Saratoga (Turning Point)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1777-78</h3>
-                        <p>Winter at Valley Forge</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1781</h3>
-                        <p>Battle of Yorktown (Final Battle)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>1783</h3>
-                        <p>Treaty of Paris signed</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="themes">
-            <h2>Thematic Takeaways for Your Essay</h2>
-            <div class="key-concept">
-                <p><strong>Causation:</strong> The Revolution was caused by a <strong>gradual shift</strong> from political dispute (taxation) to an ideological struggle (liberty vs. tyranny), fueled by Enlightenment thought.</p>
-            </div>
+            <h3>Key Concept E</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>KEY CONCEPT PART</th>
+                        <th>EVIDENCE FROM TEXT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Despite considerable loyalist opposition</td>
+                        <td>(132) "The British also discovered that Patriots were stronger and better organized" in the Carolinas, and Loyalist forces were defeated at battles like Kings Mountain and the Cowpens.</td>
+                    </tr>
+                    <tr>
+                        <td>as well as Great Britain's apparently overwhelming military and financial advantages</td>
+                        <td>(130) "At the beginning of the Revolution, the British had the world's best-equipped and most disciplined army, as well as a navy that was unopposed in American waters."</td>
+                    </tr>
+                    <tr>
+                        <td>the Patriot cause succeeded because of the actions of colonial militias and the Continental Army</td>
+                        <td>(129-131) "The final victory resulted primarily from the steady struggle of the Continental Army." Militias were important for local defense, and the Continental Army's resilience (e.g., Valley Forge) and growing skill were crucial.</td>
+                    </tr>
+                    <tr>
+                        <td>George Washington's military leadership</td>
+                        <td>(129-131) Washington argued for and built a national army that could engage the British directly. He maintained the army through terrible conditions and made key strategic decisions, like the march to Yorktown.</td>
+                    </tr>
+                    <tr>
+                        <td>and assistance sent by European allies</td>
+                        <td>(135) "The Americans were sustained by loans from France and Spain." France recognized American independence, provided troops and its navy, which was essential to the victory at Yorktown. The Dutch also provided loans and trade.</td>
+                    </tr>
+                </tbody>
+            </table>
             
-            <div class="key-concept">
-                <p><strong>American & National Identity:</strong> The experience of resisting British policies (Stamp Act Congress, Committees of Correspondence, Continental Congresses) forged a new <strong>American identity</strong> separate from Britain.</p>
-            </div>
-            
-            <div class="key-concept">
-                <p><strong>The "Why Win?":</strong> Remember the four factors: Home-field advantage, ideological commitment, Washington's leadership, and the critical <strong>French alliance after Saratoga</strong>.</p>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; font-weight: bold; font-size: 1.2rem;">
-                You have all the pieces. Now go crush that test! You've got this.
-            </p>
+            <h3>Key Terms</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Term (Page #)</th>
+                        <th>What is important about the event or idea? Why do we remember it?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Yorktown (138)</td>
+                        <td><strong>What:</strong> The last major battle of the American Revolution, where a combined American and French force trapped General Cornwallis's army, forcing its surrender. <strong>Importance:</strong> It was the decisive military victory that effectively ended the war and ensured American independence.</td>
+                    </tr>
+                    <tr>
+                        <td>The Articles of Confederation (139)</td>
+                        <td><strong>What:</strong> The first written constitution of the United States, which created a national government with limited powers and most authority retained by the states. <strong>Importance:</strong> It was the first attempt at a national government, but its weaknesses (e.g., no power to tax) led to the need for the current U.S. Constitution.</td>
+                    </tr>
+                    <tr>
+                        <td>Northwest Ordinance of 1787 (145)</td>
+                        <td><strong>What:</strong> A law that established a system for creating new states in the territory north of the Ohio River. <strong>Importance:</strong> It set a pattern for the orderly expansion of the United States, banned slavery in the Northwest Territory, and guaranteed rights like trial by jury and public education.</td>
+                    </tr>
+                    <tr>
+                        <td>Bill of Rights (148)</td>
+                        <td><strong>What:</strong> A list of essential rights and liberties, such as freedom of speech and religion, added to the U.S. Constitution as the first ten amendments. <strong>Importance:</strong> It was a key outcome of the "Revolution of the Mind," protecting individual freedoms from government infringement and mirroring similar declarations in early state constitutions.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-    </main>
+    </div>
+    
+    <footer>
+        <p>APUSH American Revolution Study Guide - All Information Preserved Exactly As Written</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs and sections
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
