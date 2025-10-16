@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APUSH Period 3 Study Guide | Road to Revolution & The American Revolution</title>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #002868;
+            --accent-color: #B22234;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f3f5;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            right: -10px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .key-concept {
+            background-color: #e8f4f8;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>APUSH Period 3 Study Guide</h1>
+            <p class="subtitle">The Road to Revolution & The American Revolution (1754-1800)</p>
+            <p>The central theme of Period 3 is the shift from <strong>British subjects to American citizens</strong>.</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#phase1">Phase 1: Seeds of Conflict</a></li>
+                <li><a href="#phase2">Phase 2: Escalation</a></li>
+                <li><a href="#phase3">Phase 3: Philosophical Shift</a></li>
+                <li><a href="#phase4">Phase 4: War for Independence</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#themes">Thematic Takeaways</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="phase1">
+            <h2>Phase 1: The Seeds of Conflict (1763-1765)</h2>
+            <p>The end of the <strong>French and Indian War (Seven Years' War)</strong> is the turning point that changes everything.</p>
+            
+            <div class="key-concept">
+                <p><strong>Why it Matters:</strong> Britain wins, but is left with a massive war debt and a huge new empire in North America to manage.</p>
+                <p><strong>Key Change:</strong> The era of <strong>Salutary Neglect</strong> (Britain leaving the colonies to govern themselves) is OVER. Britain now needs to tax the colonies to pay for the war and the new territory.</p>
+            </div>
+            
+            <h3>Key British Actions & Colonial Responses:</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>British Action (The "What")</th>
+                        <th>Year</th>
+                        <th>Colonial Response (The "So What")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Proclamation of 1763</strong></td>
+                        <td>1763</td>
+                        <td>Bans settlement west of the Appalachians. <strong>Angers colonists</strong> who just fought a war for that land. Seen as British limitation on their freedom.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sugar Act</strong></td>
+                        <td>1764</td>
+                        <td>First act intended specifically to <strong>raise revenue</strong>. Cracks down on smuggling. Angers merchants.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stamp Act</strong></td>
+                        <td>1765</td>
+                        <td><strong>THE BIG ONE.</strong> A <strong>direct tax</strong> on all paper goods. Affects almost every colonist, especially the elite.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stamp Act Congress</strong></td>
+                        <td>1765</td>
+                        <td>First significant <strong>intercolonial meeting</strong>. 9 colonies send delegates. They petition Parliament, arguing <strong>"No Taxation Without Representation."</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sons & Daughters of Liberty</strong></td>
+                        <td>1765</td>
+                        <td>Secret societies formed to resist British policies. Use <strong>boycotts</strong> (most effective tool), intimidation, tar-and-feathering.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Virtual Representation</strong></td>
+                        <td>1765</td>
+                        <td><strong>Britain's argument:</strong> "You are represented in Parliament because its members represent all British subjects, not just the district they are from." <strong>Colonists reject this completely.</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="phase2">
+            <h2>Phase 2: Escalation & Rising Tensions (1767-1774)</h2>
+            <p>The conflict intensifies from a debate over taxes to a struggle over liberty and authority.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>British Action (The "What")</th>
+                        <th>Year</th>
+                        <th>Colonial Response (The "So What")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Townshend Acts</strong></td>
+                        <td>1767</td>
+                        <td>Taxes on imported goods (glass, tea, paper). Revenue used to pay royal officials, making them loyal to the Crown, not the colonies.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Letters from a Farmer in Pennsylvania (John Dickinson)</strong></td>
+                        <td>1767</td>
+                        <td>Argues that Parliament has no right to tax the colonies for revenue. Reinforces the "No Taxation" argument using Enlightenment ideas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boston Massacre</strong></td>
+                        <td>1770</td>
+                        <td>British soldiers fire on a mob, killing 5 colonists. <strong>Paul Revere's engraving</strong> is used as propaganda to galvanize anti-British sentiment.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Committees of Correspondence</strong></td>
+                        <td>1772+</td>
+                        <td>Created by <strong>Samuel Adams</strong>. A communication network between colonies to share news and coordinate resistance. <strong>Builds intercolonial unity.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tea Act</strong></td>
+                        <td>1773</td>
+                        <td>Not a new tax, but a <strong>monopoly</strong> granted to the British East India Company. Hurts colonial merchants.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boston Tea Party</strong></td>
+                        <td>1773</td>
+                        <td><strong>Sons of Liberty</strong> dump 342 chests of tea into Boston Harbor as a direct protest against the Tea Act.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coercive (Intolerable) Acts</strong></td>
+                        <td>1774</td>
+                        <td><strong>Britain's punishment for the Tea Party:</strong> Closes Boston Harbor, restricts Massachusetts assembly, expands Quartering Act.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quebec Act</strong></td>
+                        <td>1774</td>
+                        <td>Angers colonists for different reasons: extends Quebec's territory into the Ohio Valley and allows Catholicism. Seen as an attack on their land and religion.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Continental Congress</strong></td>
+                        <td>1774</td>
+                        <td>12 colonies (not GA) meet. <strong>Goal is NOT independence.</strong> They create: 1) <strong>Declaration of Rights and Grievances</strong>, 2) <strong>The Association</strong> to enforce a boycott of British goods. Agree to meet again in 1775 if demands aren't met.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="phase3">
+            <h2>Phase 3: The Philosophical Shift (1775-1776)</h2>
+            <p>This is the "Why" behind the "What." How did the colonists justify rebellion?</p>
+            
+            <h3>Enlightenment Influences:</h3>
+            <ul>
+                <li><strong>John Locke (Natural Rights):</strong> People are born with <strong>Life, Liberty, and Property</strong>. Government's job is to protect these. If it fails, the people have a right to rebel. (Jefferson changes "Property" to "Pursuit of Happiness").</li>
+                <li><strong>Jean-Jacques Rousseau (Social Contract):</strong> Government power comes from the <strong>consent of the governed</strong>. People agree to be governed in exchange for the protection of their rights.</li>
+                <li><strong>Baron de Montesquieu (Separation of Powers):</strong> Power should be divided within government to prevent tyranny.</li>
+            </ul>
+            
+            <h3>Thomas Paine's <em>Common Sense</em> (Jan. 1776):</h3>
+            <ul>
+                <li><strong>The Game Changer.</strong> Written in plain language for the masses.</li>
+                <li>Argues for <strong>independence</strong>, calls monarchy "tyrannical," and says America should be a "republic."</li>
+                <li>Convinces thousands of common colonists that independence is not just possible, but necessary.</li>
+            </ul>
+            
+            <h3>The Declaration of Independence (July 4, 1776):</h3>
+            <ul>
+                <li><strong>Authored by Thomas Jefferson.</strong></li>
+                <li>Heavily influenced by Enlightenment ideas (Locke).</li>
+                <li><strong>Structure:</strong>
+                    <ol>
+                        <li><strong>Preamble:</strong> States purpose and philosophy (natural rights, social contract).</li>
+                        <li><strong>List of Grievances:</strong> Long list of complaints against <strong>King George III</strong> (focusing on the King was a strategic way to unite colonists).</li>
+                        <li><strong>Resolution of Independence:</strong> Declares the colonies "free and independent states."</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="phase4">
+            <h2>Phase 4: The War for Independence (1775-1783)</h2>
+            <p><strong>Key Fact:</strong> The fighting starts <strong>over a year before</strong> independence is declared.</p>
+            
+            <h3>Key Events:</h3>
+            <ul>
+                <li><strong>Lexington & Concord (April 1775):</strong> <strong>"The Shot Heard 'Round the World."</strong> British troops sent to seize colonial arms and arrest leaders. <strong>Paul Revere's ride</strong> warns the militia. The war begins.</li>
+                
+                <li><strong>Second Continental Congress (1775):</strong>
+                    <ul>
+                        <li>Now acts as the <strong>first national government</strong>.</li>
+                        <li>Creates the <strong>Continental Army</strong> and appoints <strong>George Washington</strong> as commander.</li>
+                        <li>Issues the <strong>Olive Branch Petition</strong> (last-ditch effort for peace, which the King rejects).</li>
+                        <li>Ultimately drafts and adopts the <strong>Declaration of Independence</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Key to American Victory: How did they win?</h3>
+            <ol>
+                <li><strong>Home-Field Advantage & Guerrilla Tactics:</strong> They knew the land and used unconventional tactics against the rigid British formations.</li>
+                <li><strong>Ideological Commitment:</strong> Patriots were fighting for their homes, liberty, and the creation of a new nation. This is a more powerful motivator than a British soldier fighting for pay.</li>
+                <li><strong>George Washington's Leadership:</strong> His ability to hold the army together through terrible hardships (like <strong>Valley Forge</strong>) was crucial. At Valley Forge, <strong>Baron von Steuben</strong> trained the army into a professional fighting force.</li>
+                <li><strong>Foreign Aid (The Decisive Factor):</strong>
+                    <ul>
+                        <li><strong>Battle of Saratoga (1777):</strong> A major American victory. <strong>This is the turning point of the war</strong> because it convinces <strong>France</strong> that the Americans can win.</li>
+                        <li><strong>French Alliance:</strong> France provides money, troops, and most importantly, its <strong>navy</strong>. Spanish and Dutch support also follows.</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <h3>Final Victory & Treaty:</h3>
+            <ul>
+                <li><strong>Yorktown (1781):</strong> The final major battle. The French navy blocks a British escape by sea, while Washington's army (with French troops) surrounds them on land. British General Cornwallis surrenders.</li>
+                
+                <li><strong>Treaty of Paris (1783):</strong>
+                    <ul>
+                        <li>Britain officially recognizes American <strong>independence</strong>.</li>
+                        <li>U.S. borders are set: Atlantic to Mississippi River, Great Lakes to Florida.</li>
+                        <li>America must honor debts owed to British merchants.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="timeline">
+            <h2>Timeline for Quick Review</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1763</h3>
+                        <p>End of French & Indian War, Proclamation Act</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1765</h3>
+                        <p>Stamp Act, Stamp Act Congress, Sons of Liberty</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1770</h3>
+                        <p>Boston Massacre</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1773</h3>
+                        <p>Boston Tea Party</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1774</h3>
+                        <p>Intolerable Acts, First Continental Congress</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1775</h3>
+                        <p>Lexington & Concord, Second Continental Congress</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1776</h3>
+                        <p><em>Common Sense</em> published, Declaration of Independence</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1777</h3>
+                        <p>Battle of Saratoga (Turning Point)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1777-78</h3>
+                        <p>Winter at Valley Forge</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1781</h3>
+                        <p>Battle of Yorktown (Final Battle)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1783</h3>
+                        <p>Treaty of Paris signed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="themes">
+            <h2>Thematic Takeaways for Your Essay</h2>
+            <div class="key-concept">
+                <p><strong>Causation:</strong> The Revolution was caused by a <strong>gradual shift</strong> from political dispute (taxation) to an ideological struggle (liberty vs. tyranny), fueled by Enlightenment thought.</p>
+            </div>
+            
+            <div class="key-concept">
+                <p><strong>American & National Identity:</strong> The experience of resisting British policies (Stamp Act Congress, Committees of Correspondence, Continental Congresses) forged a new <strong>American identity</strong> separate from Britain.</p>
+            </div>
+            
+            <div class="key-concept">
+                <p><strong>The "Why Win?":</strong> Remember the four factors: Home-field advantage, ideological commitment, Washington's leadership, and the critical <strong>French alliance after Saratoga</strong>.</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-weight: bold; font-size: 1.2rem;">
+                You have all the pieces. Now go crush that test! You've got this.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>APUSH Period 3 Study Guide | Based on YouTube transcripts from tactiq.io</p>
+        </div>
+    </footer>
+</body>
+</html>
